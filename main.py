@@ -24,12 +24,13 @@ def main():
             if event.type == pygame.QUIT:
                 return
             
+        for obj in updatable:
+            obj.update(dt)
+
         screen.fill('black')
 
-        for element in drawable:
-            element.draw(screen)
-        for element in updatable:
-            element.update(dt)
+        for obj in drawable:
+            obj.draw(screen)
 
         pygame.display.update()
 
